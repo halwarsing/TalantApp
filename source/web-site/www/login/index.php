@@ -7,7 +7,7 @@
     </head>
     <body>
 <?php
-if ($_COOKIE["login"] == "") {
+if ($_COOKIE["login"] != "") {
     echo "<a href='/'>Вы уже Авторизированы</a>";
 } else {
     echo '<div id="reg">

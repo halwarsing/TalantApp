@@ -22,10 +22,13 @@ if ($_COOKIE["login"] == "") {
         if (!@GetImageSize($img)) {
             $img = "/img/none.jpg";   
         }
+        $login = $info["login"]; 
+        $ch = '"chat/?user='.$login.'"';
         echo "<div id='navigation'><div id='main' onclick='document.location.href=$main'>Главная</div><div id='cabinet' onclick='document.location.href=$cabinet'>Кабинет</div><div id='create' onclick='document.location.href=$create'>Создать</div></div>
         <div id='information'>
             <div id='name'>Это личный кабинет пользователя {$info['name']} {$info['sname']} {$info['mname']}.</div>
-                <img src='$img' id='icon' style='width: 343px; height: 343px;'>
+            <img src='$img' id='icon' style='width: 343px; height: 343px;'>
+            <input type='submit' onclick='document.location.href = $ch;' id='chatbtn' value='Чат'>
             <div id='social'>
                 <a id='youtube' href='{$info['youtube']}' target='_blank'>Ссылка на YouTube</a>
                 <a id='vk' href='{$info['vk']}' target='_blank'>Ссылка на VK</a>
@@ -78,6 +81,19 @@ if ($_COOKIE["login"] == "") {
             }
             
             #cabinet {
+                width: 85.75px;
+                height: 30px;
+                background-color: #5646bd;
+                border: 1px solid;
+                outline: none;
+                font-size: 20px;
+                text-align: center;
+                padding-top: 5px;
+                display: inline-block;
+                margin-left: 0.5px;
+            }
+            
+            #chat {
                 width: 85.75px;
                 height: 30px;
                 background-color: #5646bd;

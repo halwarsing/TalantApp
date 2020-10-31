@@ -18,7 +18,8 @@ if ($_COOKIE["login"] == "") {
     $main = '"/"';
     $cabinet = '"/cabinet"';
     $create = '"/lessons/add"';
-    echo "<div id='navigation'><div id='main' onclick='document.location.href=$main'>Главная</div><div id='cabinet' onclick='document.location.href=$cabinet'>Кабинет</div><div id='create' onclick='document.location.href=$create'>Создать</div></div>";
+    $login = '"/login/"';
+    echo "<div id='navigation'><div id='main' onclick='document.location.href=$main'>Главная</div><div id='cabinet' onclick='document.location.href=$cabinet'>Кабинет</div><div id='create' onclick='document.location.href=$create'>Создать</div><div id='login' onclick='document.location.href=$login'>Авторизация</div></div>";
     echo "<select size='1' id='type' onchange='sort(this);'><option value='constest'>Конкурсы</option><option value='lesson'>Занятия</option><option value='webinar'>Вебинары</option><option value='profile'>Люди</option></select>
     <select size='1' id='subtag' onchange='sort(this);'>
         <option value='All'>All</option>
@@ -145,39 +146,69 @@ if ($_COOKIE["login"] == "") {
             }
             
             #main {
-                width: 85.75px;
+                width: 70px;
                 height: 30px;
                 background-color: #5646bd;
-                border: 1px solid;
+                border: 0px solid;
                 outline: none;
-                font-size: 20px;
+                font-size: 16px;
                 text-align: center;
                 padding-top: 5px;
+                margin-left: 10px;
                 display: inline-block;
+            }
+            
+            #navigation {
+                max-width: 343px;
+                background-color: #5646bd;
+                border-radius: 10px;
             }
             
             #cabinet {
-                width: 85.75px;
+                width: 75px;
                 height: 30px;
                 background-color: #5646bd;
-                border: 1px solid;
+                border: 0px solid;
                 outline: none;
-                font-size: 20px;
+                font-size: 16px;
                 text-align: center;
                 padding-top: 5px;
                 display: inline-block;
             }
             
+            #cabinet:hover {
+                border: 1px solid;
+            }
+            
             #create {
-                width: 85.75px;
+                width: 80px;
                 height: 30px;
                 background-color: #5646bd;
-                border: 1px solid;
+                border: 0px solid;
                 outline: none;
-                font-size: 20px;
+                font-size: 16px;
                 text-align: center;
                 padding-top: 5px;
                 display: inline-block;
+            }
+            
+            #create:hover {
+                border: 1px solid;
+            }
+            
+            #login {
+                width: 98px;
+                height: 30px;
+                background-color: #5646bd;
+                border: 0px solid;
+                outline: none;
+                font-size: 16px;
+                text-align: center;
+                padding-top: 5px;
+                display: inline-block;
+            }
+            #login:hover {
+                border: 1px solid;
             }
         </style>
     </body>

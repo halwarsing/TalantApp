@@ -1,0 +1,3 @@
+pageё<h1>function print()</h1>
+<p>print() - выводит текст на экран</p>
+ё1Ёq&aёЧто выведет - print("hi")0110ih0110hi0110hihi0110TypeError0110hiё2Ё
