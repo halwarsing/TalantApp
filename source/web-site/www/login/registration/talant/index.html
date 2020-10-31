@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>REGISTRATION</title>
+        <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form method='POST' action='test.php?page=1' id='f'><input type='hidden' value='' id='test' name='test'></form>
+        <table id='table'></table>
+        <script>
+        a = "<tr><th id='tag'>programming</th></tr>";
+        tags = {
+            programming: ["python", "c++"]
+        };
+        tags["programming"].forEach(function(e) {
+            a += "<tr><td onclick='sub(this);'>"+e+"</td></tr>";
+        });
+        document.getElementById("table").innerHTML = a;
+        function sub(el) {
+            document.getElementById("test").value = el.textContent;
+            var dat = {
+                tag: el.textContent
+            };
+            $.post("set.php", dat, function(data) {
+                console.log(data);
+                document.getElementById("f").submit();
+            });
+        }
+        </script>
+        <style>
+            #res {
+                text-align: center;
+                color: #f00;
+            }
+            #subcode {
+                padding-left: 10px;
+                margin-top: 20px;
+                background-color: #6f59ff;
+                border: 1px solid #170a69;
+                border-radius: 10px;
+                width: 343px;
+                height: 50px;
+                font-size: 20px;
+                outline: none;
+            }
+            
+            #code {
+                padding-left: 10px;
+                margin-top: 50px;
+                width: 343px;
+                height: 50px;
+                background-color: #6f59ff;
+                border: 1px solid #170a69;
+                border-radius: 10px;
+                font-size: 20px;
+                outline: none;
+            }
+            
+            #reg {
+                width: 343px;
+                position: relative;
+            }
+            
+            #login {
+                padding-left: 10px;
+                background-color: #6f59ff;
+                border: 1px solid #170a69;
+                border-radius: 10px;
+                width: 343px;
+                height: 50px;
+                font-size: 20px;
+                outline: none;
+            }
+        </style>
+    </body>
+</html>
